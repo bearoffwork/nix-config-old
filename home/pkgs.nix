@@ -4,25 +4,46 @@
   home.packages = with pkgs; [
 
     # "modern" replacements
-    eza # ls
-    zoxide # cd
     ripgrep # grep
     bat # cat
     just # make
     viddy # watch
 
     # utils
-    fzf
     tig # for git graph
-
-    # stats
+    jq
     htop
 
     # dev
     wezterm
-    neovim
     colima
     docker-client
+    php82Packages.composer
+    (pkgs.php82.buildEnv {
+      extensions = ({ enabled, all }: enabled ++ (with all; [
+        xdebug
+      ]));
+      extraConfig = ''
+        xdebug.mode=debug
+        xdebug.client_host = "127.0.0.1"
+        xdebug.client_port = 9003
+        ;xdebug.idekey = "PHPSTORM"
+
+        xdebug.discover_client_host = yes
+        xdebug.start_with_request = yes
+        xdebug.cli_color = 1
+        xdebug.output_dir = "~/xdebug/phpstorm/tmp/profiling"
+
+        xdebug.var_display_max_children = -1
+        xdebug.var_display_max_data = -1
+        xdebug.var_display_max_depth = -1
+      '';
+    })
+
+    jdk
+
+    # nix formatter
+    alejandra
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -37,22 +58,4 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  programs = {
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      options = [ "--cmd cd" ];
-    };
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-    eza = {
-      enable = true;
-      enableZshIntegration = true;
-      git = true;
-      icons = true;
-    };
-  };
 }

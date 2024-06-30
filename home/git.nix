@@ -6,6 +6,11 @@
     gh
   ];
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Bear.Y";

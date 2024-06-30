@@ -66,7 +66,7 @@
         "com.apple.sound.beep.feedback" = 0;  # disable beep sound when pressing volume up/down key
         AppleInterfaceStyle = "Dark";  # dark mode
         AppleKeyboardUIMode = 3;  # Mode 3 enables full keyboard control.
-        # ApplePressAndHoldEnabled = true;  # enable press and hold
+        ApplePressAndHoldEnabled = false;  # enable press and hold
 
 	AppleFontSmoothing = 0;
 
@@ -168,12 +168,6 @@
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  # this is required if you want to use darwin's default shell - zsh
-  programs.zsh.enable = true;
-  environment.shells = [
-    pkgs.zsh
-  ];
 
   # Fonts
   # fonts = {
