@@ -71,8 +71,10 @@
 
   home.shellAliases = {
     j = "just";
+    g = "git";
     vi = "nvim";
     vim = "nvim";
+
     random-passwd = "nix-hash --flat --type md5 --base32 <(openssl rand 32)";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";

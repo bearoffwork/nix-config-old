@@ -57,6 +57,7 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    DELTA_PAGER="less --mouse";
   };
 
   # Let Home Manager install and manage itself.
