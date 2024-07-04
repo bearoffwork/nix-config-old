@@ -100,7 +100,7 @@ return {
 	color_schemes = { ["custom"] = custom },
 	color_scheme = "custom",
 
-	initial_cols = 128,
+	initial_cols = 130,
 	initial_rows = 28,
 
 	use_fancy_tab_bar = false,

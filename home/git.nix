@@ -18,6 +18,25 @@
 
     extraConfig = {
       init.defaultBranch = "main";
+      pull.rebase = true;
+      rebase.autoStash = true;
+      merge.ff = false;
+
+      alias = {
+        s = "show";
+        st = "status";
+        ch = "checkout";
+        chb = "checkout -b";
+        pl = "pull --rebase";
+        pu = "push";
+        mr = "merge --no-ed";
+
+        aa = "add -A";
+        c = "commit";
+        cm = "commit -m";
+        cam = "commit -am";
+        caa = "commit -a --amend --no-edit";
+      };
     };
 
     includes = [{

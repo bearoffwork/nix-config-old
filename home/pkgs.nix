@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
 
     # "modern" replacements
+    fd # find
     ripgrep # grep
     bat # cat
     just # make
@@ -13,34 +14,24 @@
     tig # for git graph
     jq
     htop
+    keepassxc # passwd mgr
 
     # dev
     wezterm
     colima
     docker-client
-    php82Packages.composer
-    (pkgs.php82.buildEnv {
-      extensions = ({ enabled, all }: enabled ++ (with all; [
-        xdebug
-      ]));
-      extraConfig = ''
-        xdebug.mode=debug
-        xdebug.client_host = "127.0.0.1"
-        xdebug.client_port = 9003
-        ;xdebug.idekey = "PHPSTORM"
+    dive
+    direnv
+    devenv
+    neovim
+    vscode
+    lefthook
 
-        xdebug.discover_client_host = yes
-        xdebug.start_with_request = yes
-        xdebug.cli_color = 1
-        xdebug.output_dir = "~/xdebug/phpstorm/tmp/profiling"
-
-        xdebug.var_display_max_children = -1
-        xdebug.var_display_max_data = -1
-        xdebug.var_display_max_depth = -1
-      '';
-    })
-
+    python312
+    go
     jdk
+    nodejs
+    pnpm
 
     # nix formatter
     alejandra
@@ -58,4 +49,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  programs.direnv.enable = true;
 }

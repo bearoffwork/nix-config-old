@@ -7,7 +7,8 @@
     # ./fish.nix
     ./dotfiles.nix
     ./git.nix
-    ./neovim.nix
+    ./awscli.nix
+    ./php.nix
   ];
  
   # Home Manager needs a bit of information about you and the paths it should

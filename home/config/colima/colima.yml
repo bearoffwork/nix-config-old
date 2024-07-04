@@ -5,7 +5,7 @@ cpu: 4
 # Size of the disk in GiB to be allocated to the virtual machine.
 # NOTE: changing this has no effect after the virtual machine has been created.
 # Default: 60
-disk: 100
+disk: 200
 
 # Size of the memory in GiB to be allocated to the virtual machine.
 # Default: 2
@@ -173,6 +173,8 @@ sshConfig: false
 mounts:
   - location: ~/src
     writable: true
+  - location: ~/.aws
+    writable: false
 
 # Environment variables for the virtual machine.
 #

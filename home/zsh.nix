@@ -5,6 +5,7 @@
     zsh-autosuggestions
     zsh-completions
     zsh-powerlevel10k
+    zsh-fzf-tab
   ];
 
   home.file = {
@@ -74,6 +75,7 @@
     g = "git";
     vi = "nvim";
     vim = "nvim";
+    dev = "devenv";
 
     random-passwd = "nix-hash --flat --type md5 --base32 <(openssl rand 32)";
 

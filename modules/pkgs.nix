@@ -13,10 +13,6 @@
 
     skhd # hotkeyd
     wezterm # terminal
-
-    utm # vm
-
-    python3
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
