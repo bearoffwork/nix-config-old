@@ -52,7 +52,7 @@ network:
   # Assign reachable IP address to the virtual machine.
   # NOTE: this is currently macOS only and ignored on Linux.
   # Default: false
-  address: false
+  address: true
   
   # Custom DNS resolvers for the virtual machine.
   #
@@ -150,7 +150,11 @@ cpuType: ""
 #       touch ~/.provision
 #
 # Default: []
-provision: []
+provision:
+    - mode: system
+      script: |
+        sed -i 's/ports.ubuntu.com/free.nchc.org.tw/' /etc/apt/sources.list.d/ubuntu.sources
+        apt update && apt -y install neovim bind9-dnsutils lsof
 
 # Modify ~/.ssh/config automatically to include a SSH config for the virtual machine.
 # SSH config will still be generated in ~/.colima/ssh_config regardless.

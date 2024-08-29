@@ -18,20 +18,14 @@
 
     # dev
     wezterm
-    colima
-    docker-client
-    dive
     direnv
     devenv
     neovim
     vscode
     lefthook
 
-    python312
     go
     jdk
-    nodejs
-    pnpm
 
     # nix formatter
     alejandra

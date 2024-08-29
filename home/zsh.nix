@@ -47,6 +47,7 @@
         # prompt at bottom
         tput cup $(tput lines)
 
+        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
         unsetopt beep
